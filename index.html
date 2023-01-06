@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+  <title>Navbar</title>
+</head>
+<body>
+  <div class="navbar">
+    <p>Navbar</p>
+    <nav>
+      <ul id="ul1">
+        <li>Home</li>
+        <li>Services</li>
+        <li>Orders</li>
+        <li>Abouts</li>
+        <li>Contact</li>
+        <i id="close" class="fa-solid fa-circle-xmark"></i>
+      </ul>
+    </nav>
+    <i id="burgger" class="fa-solid fa-bars"></i>
+  </div>
+
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body{
+      height: 100vh;
+      color: white;
+    }
+    .navbar ul i{
+      position: absolute;
+      left: 5%;
+      top: 1%;
+    }
+    
+    .navbar{
+      display: flex;
+      justify-content: space-between;
+      padding: 0 5%;
+      
+      height: 10%;
+      align-items: center;
+      position: relative;
+    }
+    .navbar p{
+      font-size: 40px;
+      font-weight: bold;
+    }
+    .navbar ul li{
+      display: inline;
+      margin: 2px 15px;
+      font-size: 25px;
+    }
+    .navbar i{
+      position: fixed;
+      left: 93%;
+      font-size: 30px;
+      display: none;
+    }
+    .navbar{
+      background-color: blue;
+    }
+
+    @media (max-width:800px)
+    {
+      .navbar i{
+        display: block;
+      }
+      .navbar ul{
+        background-color: aqua;
+        position: fixed;
+        top: 0;
+        right: -250px;
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px;
+        transition: 0.5s;
+        z-index: 3;
+        color: black;
+      }
+      .navbar ul li{
+        margin: 30px 20px;
+        display: block;
+        color: black;
+        font-size: 30px;
+    }
+  }
+  </style>
+
+  <script>
+    let ul=document.getElementById('ul1');
+    let bug=document.getElementById('burgger');
+    let close=document.getElementById('close');
+
+    bug.addEventListener('click',function(){
+      console.log('clicked');
+      ul.style.right='0';
+    })
+    close.addEventListener('click',function(){
+      ul.style.right='-250px';
+    })
+  </script>
+</body>
+</html>
